@@ -1,0 +1,24 @@
+step 1: python -m venv myenv
+
+step 2: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+step 3:  .\myenv\Scripts\activate
+
+
+python -m venv myenv:
+
+    This creates a new Python virtual environment named myenv in the current directory.
+    python -m venv is a built-in Python module used to create isolated environments, allowing you to install packages without affecting the global Python installation.
+    The myenv folder will contain the necessary directories and files for the virtual environment.
+
+.\myenv\Scripts\activate:
+
+    This command activates the virtual environment in Windows using PowerShell or Command Prompt.
+    .\myenv\Scripts\activate will modify the environment variables for the current session, so Python and pip will use the versions from the virtual environment instead of the system-wide Python installation.
+    Once activated, you'll see the environment name (myenv) in the prompt, indicating you're working inside the virtual environment.
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process:
+
+    This command is used in PowerShell to modify the script execution policy, allowing PowerShell to run scripts, including the activate script of the virtual environment.
+    RemoteSigned means that PowerShell will allow locally created scripts to run, but scripts downloaded from the internet will need to be signed by a trusted publisher.
+    -Scope Process limits the policy change to the current PowerShell session (it doesn't permanently modify the policy).
